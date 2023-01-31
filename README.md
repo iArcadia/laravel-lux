@@ -1,2 +1,3 @@
-# laravel-lux
+# Laravel Lux
+
 A Laravel starter kit project.
