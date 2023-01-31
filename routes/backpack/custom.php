@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Lux\Lux;
 
 // --------------------------
 // Custom Backpack Routes
@@ -16,4 +17,7 @@ Route::group([
     ),
     'namespace'  => 'App\Http\Controllers\Admin',
 ], function () { // custom admin routes
+    if (!Lux::config('auth.unique_user')) {
+        Route::crud('user', 'Auth\UserCrudController');
+    }
 }); // this should be the absolute last line of this file
